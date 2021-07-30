@@ -36,8 +36,33 @@ The number of nodes in each linked list is in the range [1, 100].
 It is guaranteed that the list represents a number that does not have leading zeros.
 
  */
- var addTwoNumbers = function(l1, l2) {
+var addTwoNumbers = function(l1, l2) {
+  var result = [];
+  var counter = 0;
 
+   for (var i = 0; i < l1.length; i++) {
+      if (counter === 1) {
+        l1[i] = l1[i] + 1;
+        counter = 0;
+      }
+      if (!l2[i]) {
+        l2[i] = 0;
+      }
+
+      l1[i] + l2[i] > 9 ? counter = 1 : result.push(l1[i] + l2[i])
+
+      if (l1[i] + l2[i] > 9 ) {
+        result.push(l1[i] + l2[i] - 10)
+       }
+   }
+
+  if (counter === 1) {
+    result.push(1);
+  }
+
+  return result;
 };
 
 console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9])) //Output: [8,9,9,9,0,0,0,1]
+
+//console.log(addTwoNumbers([2,4,3], [5,6,4]))
