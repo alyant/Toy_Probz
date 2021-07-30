@@ -39,3 +39,5 @@ It is guaranteed that the list represents a number that does not have leading ze
  var addTwoNumbers = function(l1, l2) {
 
 };
+
+console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9])) //Output: [8,9,9,9,0,0,0,1]
