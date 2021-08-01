@@ -37,7 +37,7 @@ Follow up: Could you solve it without converting the integer to a string?
  var isPalindrome = function(x) {
   var test = JSON.stringify(x);
   var result = '';
-   for (var i = test.length - 1; i > 0; i--) {
+   for (var i = test.length - 1; i > -1; i--) {
     result += test[i];
    }
 
