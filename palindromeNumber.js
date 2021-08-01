@@ -29,3 +29,22 @@ Constraints:
 Follow up: Could you solve it without converting the integer to a string?
 
 */
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+ var isPalindrome = function(x) {
+  var test = JSON.stringify(x);
+  var result = '';
+   for (var i = test.length - 1; i > 0; i--) {
+    result += test[i];
+   }
+
+   return Number(result) === x ? true : false;
+};
+
+console.log(isPalindrome(121))
+console.log(isPalindrome(-121))
+console.log(isPalindrome(123))
+console.log(isPalindrome(120021))
