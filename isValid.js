@@ -40,5 +40,22 @@ s consists of parentheses only '()[]{}'.
  * @return {boolean}
  */
  var isValid = function(s) {
+  if (s.length < 0) {
+    return true;
+  }
+  const key = {
+    '{': '}',
+    '(': ')',
+    '[': ']'
+  }
+  if (key[s[0]] && s.includes(key[s[0]])) {
+    s.slice(s.indexOf(key[s[0]]));
+    s.slice(s[0])
+    isValid(s);
+  } else {
+    return false;
+  }
 
 };
+
+isValid('{()}')

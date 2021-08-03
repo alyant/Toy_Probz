@@ -38,7 +38,7 @@ strs[i] consists of only lower-case English letters.
   }
   result = '';
   for (var j in key) {
-      let tracker = 0;
+    let tracker = 0;
     for (let i = 1; i < strs.length; i++) {
       if (strs[i].slice(0, key[j].length) === key[j]) {
         tracker += 1;
