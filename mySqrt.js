@@ -25,6 +25,13 @@ Constraints:
  * @param {number} x
  * @return {number}
  */
- var mySqrt = function(x) {
-
+ var mySqrt = function(x, y = 1) {
+  if (y * y === x) return y;
+  if (y * y > x ) return y - 1;
+  return mySqrt(x, y + 1);
 };
+
+console.log(mySqrt(4)) //2
+console.log(mySqrt(8)) //2
+console.log(mySqrt(25)) //5
+console.log(mySqrt(35)) //5
