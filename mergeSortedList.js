@@ -47,4 +47,5 @@ Both l1 and l2 are sorted in non-decreasing order.
     }
  };
 
- console.log(mergeTwoLists([1,2,4], [1,3,4])) //[1,1,2,3,4,4]
+ console.log(
+   mergeTwoLists({val:1, next:{val:2, next:{val:4, next: null}}}, {val:1, next:{val:3, next: {val:4, next: null}}})) //[1,1,2,3,4,4]
