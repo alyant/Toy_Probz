@@ -36,29 +36,33 @@ haystack and needle consist of only lower-case English characters.
  * @return {number}
  */
  var strStr = function(haystack, needle) {
-  if (needle === '') return 0;
-  let result = -1;
+//   if (needle === '') return 0;
+//   let result = -1;
 
-      let temp = '';
-      for (let i = 0; i < haystack.length; i++) {
-          if (haystack[i] === needle[0]) {
-              let test = haystack.slice(i);
-              for (let j = 0; j < test.length; j++) {
+//       let temp = '';
+//       for (let i = 0; i < haystack.length; i++) {
+//           if (haystack[i] === needle[0]) {
+//               let test = haystack.slice(i);
+//               for (let j = 0; j < test.length; j++) {
 
-                  if (test[j] !== needle[j]) {
-                      break;
-                  }
-                  temp += test[j];
-               }
-               if (temp === needle) {
-                   result = i;
-                   break;
-               } else {
-                   temp = ''
-               }
-          }
-      }
+//                   if (test[j] !== needle[j]) {
+//                       break;
+//                   }
+//                   temp += test[j];
+//                }
+//                if (temp === needle) {
+//                    result = i;
+//                    break;
+//                } else {
+//                    temp = ''
+//                }
+//           }
+//       }
 
-  return result;
+//   return result;
+
+//more time efficient solution
+    if (needle === '') return 0;
+    return haystack.indexOf(needle);
 
 };
