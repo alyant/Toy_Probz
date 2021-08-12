@@ -52,6 +52,24 @@ var convertToNumber = function(str) {
   return convertedToMin;
 }
 
+var findMinDifference = function(timePoints) {
+    var min = 720; // max difference
+    timePoints.forEach((t,i) => { // time in minutes
+        [h,m] = t.split(':');
+        timePoints[i] = (+h)*60 + (+m);
+    });
+    timePoints.sort((a,b) => a-b); // ascending order sort
+    for(let i = 1; i<timePoints.length; i++){ // compare all consecutive items in the array
+        let diff = timePoints[i] - timePoints[i-1];
+        diff = diff>720 ? 1440-diff : diff;
+        min = diff<min ? diff : min;
+    }
+    let diff = timePoints[timePoints.length-1] - timePoints[0]; // compare first and last elements
+    diff = diff>720 ? 1440-diff : diff;
+    min = diff<min ? diff : min;
+    return min;
+};
+
 console.log(findMinDifference(["23:59","00:00"]))
 console.log(findMinDifference(["00:00","23:59","00:00"]))
 console.log(findMinDifference(["12:12","00:13"])) //719
